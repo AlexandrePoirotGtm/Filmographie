@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Film_Métier", "FilmPréféré\Film_Métier.csproj", "{72E0D16A-F5E1-4C4D-A46D-C078BA958200}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Film_Interface", "Film_Interface\Film_Interface.csproj", "{FE95951A-3046-416B-9958-6C7D69133854}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{72E0D16A-F5E1-4C4D-A46D-C078BA958200}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72E0D16A-F5E1-4C4D-A46D-C078BA958200}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72E0D16A-F5E1-4C4D-A46D-C078BA958200}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE95951A-3046-416B-9958-6C7D69133854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE95951A-3046-416B-9958-6C7D69133854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE95951A-3046-416B-9958-6C7D69133854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE95951A-3046-416B-9958-6C7D69133854}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

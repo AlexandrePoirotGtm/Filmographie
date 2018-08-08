@@ -9,13 +9,15 @@ namespace Film_métier
     public class Film
     {
         public string Nom { get; set; }
-        public DateTime Durée { get; set; }
+        public TimeSpan Durée { get; set; }
         public List<Genre> LesGenre { get; set; }
         public List<Location> LaLocation { get; set; }
         //public Location LaLocation { get; set; }
 
-        public Film()
+        public Film(string nom, TimeSpan duration)
         {
+            Nom = nom;
+            Durée = duration;
             List<Genre> Genres = new List<Genre>();
             LesGenre = Genres;
             List<Location> LaLocation = new List<Location>();
@@ -40,9 +42,10 @@ namespace Film_métier
             LaLocation.Add(location);
         }
 
-        //public int GetLocationId()
-        //{
-        //    return LaLocation.Id;
-        //}
+        public void AfficherDurée()
+        {
+            
+            Console.WriteLine(Durée.Hours + "H" + Durée.Minutes);
+        }
     }
 }

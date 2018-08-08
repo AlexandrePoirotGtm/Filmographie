@@ -18,7 +18,7 @@ namespace Film_métier
 
 
             Genre Action = new Genre("Action");
-            Film Avengers = new Film();
+            Film Avengers = new Film("Avengers",TimeSpan.FromMinutes(150));
             Avengers.Nom = "Avengers";
             OutilsMetier.AddGenre(Avengers, Action);
             Avengers.AfficherGenre();
@@ -29,8 +29,25 @@ namespace Film_métier
             ListeFilm.Add(Avengers);
             ListeClient.Add(Michel);
 
-            //OutilsMetier.AfficherLocation(ListeClient, ListeFilm);
             lalocation.AfficherLocation();
+            Avengers.AfficherDurée();
+
+            
+
+           /* TimeSpan heure = TimeSpan.FromHours(DateTime.Now.Hour);
+
+            if (heure < TimeSpan.FromHours(18))
+            {
+                Console.WriteLine("il est en dessous de 18h");
+            }
+            else if (heure == TimeSpan.FromHours(14))
+            {
+                Console.WriteLine("il est 18h");
+            }
+            else if (heure < TimeSpan.FromHours(14))
+            {
+                Console.WriteLine("il est plus de 18h");
+            }*/
         }
     }
 
