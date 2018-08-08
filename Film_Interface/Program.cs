@@ -16,7 +16,14 @@ namespace Film_Interface
             List<Client> ListeClient = new List<Client>();
             List<Location> ListeLocation = new List<Location>();
 
-            
+            Client lala = new Client("George","Doggo","toutou");
+            ListeClient.Add(lala);
+            OutilsConsole.AfficherLogger(ListeClient);
+
+            foreach(Client cli in ListeClient)
+            {
+                OutilsConsole.AfficherMessage(cli.Prenom,ConsoleColor.DarkCyan);
+            }
         }
     }
 }

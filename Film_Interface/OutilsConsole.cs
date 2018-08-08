@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Film_métier;
 namespace Film_Interface
 {
-    class OutilsConsole
+    public static class OutilsConsole
     {
         public static string PosezQuestion(string question)
         {
@@ -57,11 +58,77 @@ namespace Film_Interface
         {
             return decimal.Parse(PosezQuestion("Veuillez saisir un décimal : "));
         }
-        public void AfficherMenu()
+        public static void Connexion(List<Client> lesClients)
+        {
+            string nom;
+            string mdp;
+            nom = PosezQuestionObligatoire("Nom : ");
+            mdp = PosezQuestionObligatoire("Mot De Passe : ");
+            
+            foreach (Client client in lesClients)
+            {
+                if((client.Nom.ToLower() == nom.ToLower())&& (client.Mdp.ToLower() == mdp.ToLower()))
+                {
+                    Console.Clear();
+                    AfficherMessage("Bienvenue " + client.Prenom, ConsoleColor.Magenta);
+                    
+                }
+                else
+                {
+                    Console.Clear();
+                    string choix;
+                    AfficherMessage("Compte Inconnue\n\n1-Réessayer\n2-Inscription\n3-Quitter",ConsoleColor.DarkRed);
+                    choix = Console.ReadLine();
+                    switch (choix)
+                    {
+                        case "1":
+                            
+                            break;
+
+                        case "2":
+                            Inscription(lesClients);
+                            return;
+                            
+                        default:
+
+                            break;
+                    }
+                }
+            }
+        }
+        public static void Inscription(List<Client> lesClients)
+        {
+            string nom;
+            string prenom;
+            string mdp;
+            nom = PosezQuestionObligatoire("Nom : ");
+            prenom = PosezQuestionObligatoire("Prenom : ");
+            mdp = PosezQuestionObligatoire("Mot De Passe : ");
+            Client leClient = new Client(prenom,nom,mdp);
+            lesClients.Add(leClient);
+        }
+      
+        public static void AfficherMenu()
         {
 
         }
-        public void AfficherMessage(string message,ConsoleColor color)
+
+        public static void AfficherLogger(List<Client> lesClients)
+        {
+            string choix;
+            choix = PosezQuestionObligatoire("1-Connexion\n\n2-Inscription");
+            Console.Clear();
+            if(choix == "1")
+            {
+                Connexion(lesClients);
+            }
+            else if(choix == "2")
+            {
+                Inscription(lesClients);
+            }
+            else {}
+        }
+        public static void AfficherMessage(string message,ConsoleColor color)
         {
             Console.ForegroundColor = color;
             Console.WriteLine(message);

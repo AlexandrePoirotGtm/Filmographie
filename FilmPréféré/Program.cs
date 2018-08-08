@@ -23,7 +23,7 @@ namespace Film_métier
             OutilsMetier.AddGenre(Avengers, Action);
             Avengers.AfficherGenre();
 
-            Client Michel = new Client("Michel", "Chervier");
+            Client Michel = new Client("Michel", "Chervier","");
             Location lalocation = OutilsMetier.CréationLocation(Michel,Avengers,"10/10/2018 18:00:00");
 
             ListeFilm.Add(Avengers);
