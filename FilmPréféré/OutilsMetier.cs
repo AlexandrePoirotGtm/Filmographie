@@ -14,6 +14,13 @@ namespace Film_métier
             genre.RajouteFilm(film);
         }
 
+        public static Location CréationLocation(Client client, Film film,string LaDate)
+        {
+            Location laLocation = new Location(DateTime.Parse(LaDate), client, film);
+            client.LaLocation.Add(laLocation);
+            film.LaLocation.Add(laLocation);
+            return laLocation;
+        }
         public static void AfficherLocation(List<Client> clients, List<Film> films)
         {
            /* var requete = from client in clients

@@ -24,16 +24,13 @@ namespace Film_métier
             Avengers.AfficherGenre();
 
             Client Michel = new Client("Michel", "Chervier");
-            Location Lalocation = new Location(DateTime.Parse("10/10/1245"),Michel,Avengers);
-
-            Michel.LaLocation.Add(Lalocation);
-            Avengers.addLocation(Lalocation);
+            Location lalocation = OutilsMetier.CréationLocation(Michel,Avengers,"10/10/2018 18:00:00");
 
             ListeFilm.Add(Avengers);
             ListeClient.Add(Michel);
 
-            OutilsMetier.AfficherLocation(ListeClient, ListeFilm);
-            Lalocation.AfficherLocation();
+            //OutilsMetier.AfficherLocation(ListeClient, ListeFilm);
+            lalocation.AfficherLocation();
         }
     }
 
