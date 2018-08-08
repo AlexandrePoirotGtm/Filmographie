@@ -11,16 +11,30 @@ namespace Film_métier
     {
         static void Main(string[] args)
         {
-            OutilsMetier Outils = new OutilsMetier();
             List<Film> ListeFilm = new List<Film>();
             List<Genre> ListeGenre = new List<Genre>();
+            List<Client> ListeClient = new List<Client>();
+            List<Location> ListeLocation = new List<Location>();
+
 
             Genre Action = new Genre("Action");
             Film Avengers = new Film();
             Avengers.Nom = "Avengers";
-            Outils.AddGenre(Avengers,Action);
-            
+            OutilsMetier.AddGenre(Avengers, Action);
+            Avengers.AfficherGenre();
+
+            Client Michel = new Client("Michel", "Chervier");
+            Location Lalocation = new Location(DateTime.Parse("10/10/1245"),Michel,Avengers);
+
+            Michel.LaLocation.Add(Lalocation);
+            Avengers.addLocation(Lalocation);
+
+            ListeFilm.Add(Avengers);
+            ListeClient.Add(Michel);
+
+            OutilsMetier.AfficherLocation(ListeClient, ListeFilm);
+            Lalocation.AfficherLocation();
         }
     }
-    
+
 }
