@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{72E0D16A-F5E1-4C4D-A46D-C078BA958200}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>FilmPréféré</RootNamespace>
-    <AssemblyName>FilmPréféré</AssemblyName>
+    <RootNamespace>Film_métier</RootNamespace>
+    <AssemblyName>Film_métier</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,6 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client.cs" />
+    <Compile Include="Film.cs" />
+    <Compile Include="Genre.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="OutilsMetier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
